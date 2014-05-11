@@ -1,0 +1,17 @@
+.menu-button
+header(role="banner")
+    .flex
+        .g1-flex4.g2-flex8.g3-flex12
+            h1
+                a(href="/").site-title Stellar Spacecraft
+               
+        nav(role="navigation")
+            block link
+            -var menu = { 'Voyager': '#voyager', 'New Horizons': '#new-horizons', 'Cassini': '#cassini', 'Dawn': '#dawn', 'Odyssey': '#odyssey', 'Lunar Reconnaissance Orbiter': '#lunar-reconnaissance-orbiter', 'International Space Station': '#international-space-station' };
+                ul
+                    each val, key in menu
+                        li.nav-item.epsilon
+                            if current === key
+                                a.current(href=val)= key
+                            else
+                                a(href=val)= key

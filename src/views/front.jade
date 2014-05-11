@@ -1,0 +1,167 @@
+doctype html
+html(lang="en")
+    include ../partials/head
+    body
+        include ../partials/header
+        section.cards
+          article.card.card-voyager
+            h1.zeta.center Voyager 1
+            img.voyager(src="/public/img/voyager.png")
+          article.card.card-horizons
+            h1.zeta.center New Horizons
+            img.new-horizons(src="/public/img/new-horizons.png")
+          article.card.card-dawn
+            h1.zeta.center Dawn
+            img.dawn(src="/public/img/dawn.png")
+          article.card.card-odyssey
+            h1.zeta.center Odyssey
+            img.odyssey(src="/public/img/odyssey.png")
+          article.card.card-cassini
+            h1.zeta.center Cassini
+            img.cassini(src="/public/img/cassini.png")
+
+        section#speed
+            .flex
+                .g1-flex4.g2-flex8.g3-flex12
+                    h1.alpha.center Max Speed
+                    #speed-data
+                      table#speed-data-table
+                          tr
+                              th Voyager 1
+                              th New Horizons
+                              th Dawn
+                              th Odyssey
+                              th Cassini
+                          tr
+                              td 61,500
+                              td 58,536
+                              td 41,256
+                              td 21,266
+                              td 66,240
+        section#mass
+            .flex
+                .g1-flex4.g2-flex8.g3-flex12
+                    h1.alpha.center Mass
+                    #mass-data
+                      table#mass-data-table
+                          tr
+                              th Voyager 1
+                              th New Horizons
+                              th Dawn
+                              th Odyssey
+                              th Cassini
+                          tr
+                              td 733
+                              td 478
+                              td 1240
+                              td 376
+                              td 2523
+
+          section#distance
+              .flex
+                  .g1-flex4.g2-flex8.g3-flex12
+                      h1.alpha.center Distance from earth
+                      #distance-data
+                        table#distance-data-table
+                            tr
+                                th Voyager 1
+                                th New Horizons
+                                th Dawn
+                                th Odyssey
+                                th Cassini
+                            tr
+                                td 18900000000
+                                td 5800000000
+                                td 236300000
+                                td 54600000
+                                td 1500000000
+        //- section#voyager
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center Voyager 1 &amp; 2
+        //-
+        //-             img.voyager(src="/public/img/voyager.png")
+        //-             img.voyager2(src="/public/img/voyager.png")
+        //- section#new-horizons
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center New Horizons
+        //-             img.new-horizons(src="/public/img/new-horizons.png")
+        //- section#cassini
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center Cassini
+        //-             img.cassini(src="/public/img/cassini.png")
+        //- section#dawn
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center Dawn
+        //-             img.dawn(src="/public/img/dawn.png")
+        //- section#odyssey
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center Odyssey
+        //-             img.odyssey(src="/public/img/odyssey.png")
+        //- section#lunar-recon-orbiter
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center Lunar Reconnaissance Orbiter
+        //-             img.lro(src="/public/img/lro.png")
+        //- section#iss
+        //-     .flex
+        //-         .g1-flex4.g2-flex8.g3-flex12
+        //-             h1.alpha.center International Space Station
+        //-             img.iss(src="/public/img/iss.png")
+                    table#all-data
+                        tr
+                            th
+                            th International Space Station
+                            th Lunar Reconnaissance Orbiter
+                            th 2001 Mars Odyssey
+                            th Dawn
+                            th Cassini
+                            th New Horizons
+                            th Voyager 2
+                            th Voyager 1
+                        tr
+                            th Launch year
+                            td 1998
+                            td 2009
+                            td 2001
+                            td 2007
+                            td 1997
+                            td 2006
+                            td 1977
+                            td 1977
+                        tr
+                            th Speed (km/h)
+                            td 28,163
+                            td 3,680
+                            td 21,266
+                            td 41,256
+                            td 66,240
+                            td 58,536
+                            td 56,327
+                            td 61,500
+                        tr
+                            th Mass (kg)
+                            td 450,000
+                            td 1,846
+                            td 376
+                            td 1,240
+                            td 2,523
+                            td 478
+                            td 735
+                            td 733
+                        tr
+                            th Distance from Earth (km)
+                            td 370
+                            td 384400
+                            td 54600000
+                            td 236300000
+                            td 1500000000
+                            td 5800000000
+                            td 15600000000
+                            td 18900000000
+
+        include ../partials/foot

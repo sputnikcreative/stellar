@@ -1,0 +1,9 @@
+node_modules
+cache/*
+.sass-cache/
+.DS_Store
+!.gitignore
+craft/storage
+craft/app/
+public/images/*/
+public/images/

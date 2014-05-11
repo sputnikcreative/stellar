@@ -1,0 +1,23 @@
+[role="contentinfo"] {
+  position: relative;
+  z-index: 2;
+  padding: 10px 0;
+  
+  .footer-nav {
+    a {
+      font-family: $font-secondary;
+      text-transform: uppercase;
+      letter-spacing: 1px;     
+    }
+  }
+  
+  p {
+    color: $color-11;
+    
+    .bolt-spacer {
+      &:before {
+        color: lighten($color-11, 10%);
+      }
+    }
+  }
+}

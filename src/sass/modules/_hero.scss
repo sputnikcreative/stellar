@@ -1,0 +1,34 @@
+#hero {
+  position: relative;
+  z-index: 1;
+  background-color: $color-4;
+  padding-bottom: 73%;
+  
+  @media all and (min-width: $mq1/$base+em) {
+    height: 405px;
+    padding-bottom: 0;
+  }
+  
+  @media all and (min-width: $mq4/$base+em) {
+    
+  }
+  
+  #hero-svg {
+    position: absolute !important;
+    z-index: 1;
+    
+    @media all and (min-width: $mq1/$base+em) {
+      max-height: 405px;
+    }
+    @media all and (min-width: $mq4/$base+em) {
+      max-height: 405px;
+    }
+  }
+  .tagline {
+    font-family: $font-tertiary;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 8px;
+    font-size: 24px;
+  }
+}

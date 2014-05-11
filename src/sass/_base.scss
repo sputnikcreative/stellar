@@ -1,0 +1,442 @@
+// --- Variables
+// ---------------------------------------------------
+
+// asset path
+$asset_path: "../img/";
+
+// fonts
+$font-primary: "allumi-std", serif;
+$font-secondary: "jaf-domus-titling-web", sans-serif;
+$font-tertiary: "ff-netto-web";
+$base: 16;
+$font-size-list: 24 22 20 16 14 12;
+$med-font-size-list: 26 23 21 17 15 13;
+$lg-font-size-list: 28 26 22 18 16 15;
+$font-heading-class-list: alpha beta gamma delta epsilon zeta;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// grid
+$gutter: 10;
+$max-width: 1200; // Max grid wrap width
+$sm-column-count: 4;
+$med-column-count: 6;
+$lg-column-count: 12;
+$mqs: 400; // small breakpoint
+$mq1: 525; // Mid range breakpoint
+$mq2: 600; // Med screen breakpoint
+$mq3: 670; // Large screen breakpoint
+$mq4: 1024; // xlarge screen breakpoint
+
+
+// color
+$color-1: #0d0d0d; // black
+$color-2: #16bef2; // blue
+$color-3: #c4572a; // orange
+$color-4: #e0c755; // mustard
+$color-5: #696969; // grey
+$color-6: #303030; // dark grey
+$color-7: #777; // grey
+$color-8: #2b2b2a; // very dark grey
+$color-9: #999; // light grey
+$color-10: #ead052; // faded yellow
+$color-11: #AC9733; // gold text
+$color-12: rgba(100, 100, 100, .1); // light grey
+$color-13: #f1df6a; // bright yellow
+$color-14: rgba(0,0,0,0);
+$color-15: #f2f2f2; // light grey
+
+$sprite-size: 481px 99px;
+
+// --- end variables ---------------------------------
+
+// --- Mixins
+// ---------------------------------------------------
+// Calculate small screen grid based on $sm-column-count
+@mixin sm-grid($columns) {
+  width: $columns * (100% / $sm-column-count);
+  padding: 0 $gutter+px;
+  padding: 0 $gutter/$base+rem;
+}
+// Calculate med screen grid based on $med-column-count
+@mixin med-grid($columns) {
+  width: $columns * (100% / $med-column-count);
+  padding: 0 $gutter+px;
+  padding: 0 $gutter/$base+rem;
+}
+// Calculate large screen grid based on $lg-column-count
+@mixin lg-grid($columns) {
+  width: $columns * (100% / $lg-column-count);
+  padding: 0 $gutter+px;
+  padding: 0 $gutter/$base+rem;
+}
+
+// Calculate pixels to rem units for font sizes
+@mixin font-size($f) {
+  font-size: $f+px;
+  font-size: $f/$base+rem;
+}
+// css3 rotate, flip vertical, flip horizontal
+@mixin rotate($adeg, $xdeg, $ydeg) {
+  -webkit-transform: rotate($adeg) rotateX($xdeg) rotateY($ydeg);
+  -moz-transform: rotate($adeg) rotateX($xdeg) rotateY($ydeg);
+  -ms-transform: rotate($adeg) rotateX($xdeg) rotateY($ydeg);
+  -o-transform: rotate($adeg) rotateX($xdeg) rotateY($ydeg);
+  transform: rotate($adeg) rotateX($xdeg) rotateY($ydeg);
+}
+// css3 scale
+@mixin scale($sx, $sy) {
+  -webkit-transform: scale($sx, $sy);
+  -moz-transform: scale($sx, $sy);
+  -ms-transform: scale($sx, $sy);
+  -o-transform: scale($sx, $sy);
+  transform: scale($sx, $sy);
+}
+// css3 translate
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+// css3 perspective
+@mixin perspective($x) {
+  -webkit-transform: perspective($x);
+  -moz-transform: perspective($x);
+  -ms-transform: perspective($x);
+  -o-transform: perspective($x);
+  transform: perspective($x);
+}
+// gradients
+@mixin linear-gradient($fromColor, $toColor) {
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+}
+// clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both; }
+    *zoom: 1;
+}
+
+// transitions
+@mixin transition($property, $duration) {
+	-webkit-transition: $property $duration ease-in-out;
+	-moz-transition: $property $duration ease-in-out;
+	-o-transition: $property $duration ease-in-out;
+  -ms-transition: $property $duration ease-in-out;
+	transition: $property $duration ease-in-out;
+}
+
+// --- end mixins ------------------------------------
+
+// --- Base styles
+// ---------------------------------------------------
+
+html {
+  background-color: $color-1;
+  background-image: url($asset_path+'stars.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+body {
+  // @include linear-gradient(rgba($color-1, .01), rgba($color-1, .8));
+  // background-attachment: fixed;
+  color: #16bef2;
+  overflow-x: hidden;
+}
+[role="main"] {
+
+}
+
+.thanks-section,
+.four04-section {
+
+}
+
+// push text to the right helper
+.text-push {
+  text-align: right;
+}
+.push {
+  float: right;
+}
+// text all caps helper
+.caps {
+  text-transform: uppercase;
+}
+.horz-rule {
+  border: 0;
+  height: 0;
+  border-top: none;
+  border-bottom: 1px solid $color-12;
+  margin-bottom: 20px;
+
+  @media all and (min-width: $mq3/$base+em) {
+    margin-bottom: 80px;
+  }
+
+  &.alt {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media all and (min-width: $mq3/$base+em) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
+}
+// clear text to next line helper
+.stack {
+  clear: both;
+  display: block;
+  line-height: 1.6;
+  font-family: $font-primary;
+}
+
+// allow padding and border to be calc with width
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// base links
+a {
+  @include transition(all, .3s);
+  text-decoration: none;
+  color: $color-2;
+
+  &.alt {
+    color: $color-1;
+  }
+  h2, h3 {
+    @include transition(all, .3s);
+    color: $color-1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-1;
+
+    h2, h3 {
+      color: rgba(0,0,0,.8);
+    }
+  }
+  &.alt2 {
+    color: $color-11;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-1;
+    }
+  }
+}
+.ir {
+  font-size: 0;
+  color: transparent;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+// buttons
+a.btn,
+button.btn {
+  color: $color-1;
+  border: 2px solid $color-2;
+  background: transparent;
+  padding: 17px 30px 14px 32px;
+  text-align: center;
+  line-height: 1;
+  font-family: $font-tertiary;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  @include font-size(20);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+//  background: url("../svg/button.svg") no-repeat left 0px, url("../svg/button-hover.svg") no-repeat left 55px;
+
+  &:hover, &:active, &:focus {
+    border: 2px solid $color-1;
+//    background: url("../svg/button-hover.svg") no-repeat left 0px;
+  }
+}
+.reverse {
+  color: white;
+}
+// images
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+
+  &.contain-media {
+    width: 100%;
+  }
+  &.img-right {
+    float: right;
+  }
+  &.img-left {
+    float: left;
+  }
+}
+figure, .img-wrap {
+  margin-top: 0;
+  margin-bottom: ($gutter*2)+px;
+  position: relative;
+
+  &.contain {
+    display: block;
+    text-align: center;
+
+    img {
+      display: inline-block;
+      text-align: center;
+    }
+  }
+}
+// video
+video {
+  width: 100%;
+  height: auto;
+}
+.video-img-wrap {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  display: none;
+
+  @media all and (min-width: $mq3/$base+em) {
+    display: block;
+  }
+
+  video {
+    @include transition(opacity, .5s);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 100%;
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+// img {
+//   text-align: center;
+//   display: block;
+//   width: 400px;
+//   max-width: 100%;
+//   margin: 0 auto 400px;
+//
+//   &.iss {
+//     width: 900px;
+//   }
+//   &.voyager {
+//     position: relative;
+//     margin-top: 50px;
+//     width: 500px;
+//     margin-right: 0;
+//     right: 30px;
+//   }
+//   &.voyager2 {
+//     @include rotate(35deg, 0deg, 0deg);
+//     width: 200px;
+//     position: absolute;
+//     top: -20px;
+//     right: 0;
+//   }
+// }
+#container {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+table {
+  border-right: 1px solid $color-6;
+  border-top: 1px solid $color-6;
+  border-spacing: 0;
+  border-collapse: separate;
+  td, th {
+    padding: 10px;
+    border-bottom: 1px solid $color-6;
+    border-left: 1px solid $color-6;
+    width: 10%;
+    text-align: left;
+  }
+  th {
+    font-family: "allumi-std";
+    font-weight: 100;
+  }
+}
+.svg-container {
+  position: relative;
+  padding-bottom: 50%;
+  margin-bottom: 100px;
+  overflow: hidden;
+
+  svg {
+    position: absolute;
+    background: $color-12;
+    top: 0;
+    left: 0;
+
+    text {
+      fill: white;
+      font-size: 30px;
+
+      @media all and (min-width: $mq3/$base+em) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+#all-data {
+  display: none;
+}
+.cards {
+  padding: 20px;
+}
+.card {
+  margin-top: 20px;
+  display: block;
+  width: 20%;
+  float: left;
+  position: relative;
+
+  img {
+
+  }
+
+  &:before {
+    border-top: 2px solid rgba($color-5, .6);
+    position: absolute;
+    top: 0;
+    left: 11%;
+    width: 76%;
+    height: 100%;
+    display: block;
+    content: '';
+    background: $color-12;
+  }
+}
+
+// --- end base styles -------------------------------

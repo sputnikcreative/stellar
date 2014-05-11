@@ -1,0 +1,79 @@
+!!! 5
+html(lang="en")
+    include ../partials/head
+    body
+        #container
+            h1.title Voyager 1
+            //- svg(viewbox="0 0 400 300", preserveAspectRatio="xMidYMin meet", id="viz")
+            img.voyager(src="/public/img/voyager.png")
+ 
+            h1.title New Horizons
+            img.new-horizons(src="/public/img/new-horizons.png")
+                                  
+            h1.title Cassini
+            img.cassini(src="/public/img/cassini.png")  
+                      
+            h1.title Dawn
+            img.dawn(src="/public/img/dawn.png")            
+
+            h1.title Odyssey
+            img.odyssey(src="/public/img/odyssey.png")
+            
+            h1.title Lunar Reconnaissance Orbiter
+            img.lro(src="/public/img/lro.png")
+                                               
+            h1.title International Space Station
+            img.iss(src="/public/img/iss.png")
+            table#distance-from-earth-data
+                tr
+                    th
+                    th International Space Station
+                    th Lunar Reconnaissance Orbiter
+                    th 2001 Mars Odyssey
+                    th Dawn
+                    th Cassini
+                    th New Horizons
+                    th Voyager 2
+                    th Voyager 1
+                tr
+                    th Launch year
+                    td 1998
+                    td 2009
+                    td 2001
+                    td 2007
+                    td 1997
+                    td 2006
+                    td 1977
+                    td 1977
+                tr
+                    th Speed (km/h)
+                    td 28,163
+                    td 3,680
+                    td 21,266
+                    td 41,256
+                    td 66,240
+                    td 58,536
+                    td 56,327
+                    td 61,500
+                tr
+                    th Mass (kg)
+                    td 450,000
+                    td 1,846
+                    td 376
+                    td 1,240
+                    td 2,523
+                    td 478
+                    td 735
+                    td 733
+                tr
+                    th Distance from Earth (km)
+                    td 370
+                    td 384,400
+                    td 54.6 M
+                    td 236.3 M
+                    td 1.5 B
+                    td 5.8 B
+                    td 15.6 B
+                    td 18.9 B
+        // custom
+        script(type='text/javascript', src='../public/js/table-svg.js')

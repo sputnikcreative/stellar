@@ -1,0 +1,28 @@
+.site-title {
+  position: relative;
+  background-image: url($asset_path+'stellar-logo.svg');
+  background-position: left 8px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-size: 17px;
+  padding: 5px 0 5px 35px;
+  font-family: $font-secondary;
+  letter-spacing: 5px;
+  font-size: 17px;
+  line-height: 1;
+  color: $color-5;
+
+  &:hover {
+    color: white;
+  }
+}
+
+[role="banner"] {
+  background: rgba(0,0,0,.8);
+  z-index: 3;
+  @include clearfix;
+
+  h1 {
+    margin: 10px 0 20px;
+  }
+}

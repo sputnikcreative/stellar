@@ -1,0 +1,30 @@
+.menu-button {
+}
+
+[role="navigation"] {
+  display: none;
+  position: relative;
+  @include clearfix;
+  z-index: 2;
+  overflow: hidden;
+  width: 100%;
+  
+  ul {
+    
+  }
+  ul li {
+    text-align: center;
+  }
+  ul li a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    padding-top: 70px;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-3;
+    }
+  }
+}
