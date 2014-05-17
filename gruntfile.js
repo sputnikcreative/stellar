@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             },
             imageoptim: {
                 files: ['public/media', 'public/img'],
-                tasks: 'imageoptim'                
+                tasks: 'imageoptim'
             },
             coffeelint: {
                 files: ['src/coffeescripts/*.coffee'],
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/js/main.js', 'src/js/table-svg.js'],
+                src: ['src/js/tween.js', 'src/js/table-svg.js'],
                 dest: 'public/js/master.js'
             }
         },
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         }
     });
 
-    //Load NPM tasks 
+    //Load NPM tasks
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-coffee');
@@ -115,10 +115,10 @@ module.exports = function(grunt) {
 
     //Making grunt default to force in order not to break the project.
     grunt.option('force', true);
-    
+
     // Optimize images.
     grunt.registerTask('img', ['imageoptim']);
-    
+
     // Default task(s).
     grunt.registerTask('default', ['sass', 'jade', 'coffeelint', 'coffee', 'concat', 'uglify', 'jshint', 'watch']);
 

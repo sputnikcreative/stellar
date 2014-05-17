@@ -202,7 +202,6 @@ table {
   overflow: hidden; }
   .svg-container svg {
     position: absolute;
-    background: rgba(100, 100, 100, 0.1);
     top: 0;
     left: 0; }
     .svg-container svg text {
