@@ -61,7 +61,8 @@ body {
     content: '';
     background-color: #0d0d0d;
     background-image: url("../img/stars.png");
-    background-size: 100%;
+    background-size: 800px;
+    background-position: -100px bottom;
     background-attachment: fixed;
     height: 100%;
     width: 50%;
@@ -79,7 +80,8 @@ body {
     -moz-transform: translate(100%, 0);
     -ms-transform: translate(100%, 0);
     -o-transform: translate(100%, 0);
-    transform: translate(100%, 0); }
+    transform: translate(100%, 0);
+    background-position: right top; }
   #loading-panel.show {
     z-index: 10; }
     #loading-panel.show #glass {
@@ -114,13 +116,13 @@ body {
   border-top: none;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
   margin-bottom: 20px; }
-  @media all and (min-width: 56.25em) {
+  @media all and (min-width: 69.0625em) {
     .horz-rule {
       margin-bottom: 80px; } }
   .horz-rule.alt {
     margin-top: 20px;
     margin-bottom: 20px; }
-    @media all and (min-width: 56.25em) {
+    @media all and (min-width: 69.0625em) {
       .horz-rule.alt {
         margin-top: 60px;
         margin-bottom: 60px; } }
@@ -873,16 +875,27 @@ blockquote {
     content: "";
     display: table;
     clear: both; }
+  [role="banner"] h1, [role="banner"] h2 {
+    text-align: center; }
+    @media all and (min-width: 56.25em) {
+      [role="banner"] h1, [role="banner"] h2 {
+        text-align: left; } }
   [role="banner"] h1 {
     margin: 10px 0 20px; }
   [role="banner"] h2 {
-    margin: 27px 0 0;
+    margin: 0 auto 10px;
     color: #383838;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    display: block; }
     [role="banner"] h2 a {
       color: #606060; }
       [role="banner"] h2 a:hover {
         color: white; }
+    @media all and (min-width: 56.25em) {
+      [role="banner"] h2 {
+        margin: 27px 0 0;
+        float: right;
+        display: inline-block; } }
 
 #hero {
   position: relative;

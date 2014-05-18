@@ -194,7 +194,8 @@ body {
     content: '';
     background-color: $color-1;
     background-image: url($asset_path+'stars.png');
-    background-size: 100%;
+    background-size: 800px;
+    background-position: -100px bottom;
     background-attachment: fixed;
     height: 100%;
     width: 50%;
@@ -206,6 +207,7 @@ body {
     right: 0;
     left: auto;
     @include translate(100%, 0);
+    background-position: right top;
   }
   &.show {
     z-index: 10;
@@ -249,7 +251,7 @@ body {
   border-bottom: 1px solid $color-12;
   margin-bottom: 20px;
 
-  @media all and (min-width: $mq3/$base+em) {
+  @media all and (min-width: $mq4/$base+em) {
     margin-bottom: 80px;
   }
 
@@ -257,7 +259,7 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 
-    @media all and (min-width: $mq3/$base+em) {
+    @media all and (min-width: $mq4/$base+em) {
       margin-top: 60px;
       margin-bottom: 60px;
     }

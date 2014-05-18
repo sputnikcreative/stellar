@@ -26,13 +26,21 @@
   left: 0;
   @include clearfix;
 
+  h1, h2 {
+    text-align: center;
+
+    @media all and (min-width: $mq3/$base+em) {
+      text-align: left;
+    }
+  }
   h1 {
     margin: 10px 0 20px;
   }
   h2 {
-    margin: 27px 0 0;
+    margin: 0 auto 10px;
     color: lighten($color-6, 3%);
     letter-spacing: 2px;
+    display: block;
 
     a {
       color: $color-5;
@@ -40,6 +48,11 @@
       &:hover {
         color: white;
       }
+    }
+    @media all and (min-width: $mq3/$base+em) {
+      margin: 27px 0 0;
+      float: right;
+      display: inline-block;
     }
   }
 }
