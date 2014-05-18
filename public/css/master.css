@@ -318,9 +318,12 @@ table {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 32%;
+  width: 100%;
   position: relative;
   margin-bottom: 80px; }
+  @media all and (min-width: 47.875em) {
+    .card {
+      width: 32%; } }
   @media all and (min-width: 69.0625em) {
     .card {
       width: 19.7%; } }
@@ -415,7 +418,7 @@ table {
     display: block; }
   .flex .flex-nested:first-child, .flex .flex-nested.g1-flex4:last-child {
     padding-left: 0; }
-  @media all and (min-width: 43.75em) {
+  @media all and (min-width: 47.875em) {
     .flex .g2-flex1 {
       float: left;
       width: 16.66667%;
@@ -691,7 +694,7 @@ ul {
           overflow: visible; } }
       ul.horz-buttons li:first-child a, ul.prev-next-buttons li:first-child a {
         margin-bottom: 10px; }
-        @media all and (min-width: 43.75em) {
+        @media all and (min-width: 47.875em) {
           ul.horz-buttons li:first-child a, ul.prev-next-buttons li:first-child a {
             margin-bottom: 0; } }
   ul.prev-next-buttons {
@@ -707,7 +710,7 @@ ul {
           padding: 17px 30px 14px 32px; } }
     ul.prev-next-buttons li:first-child a {
       margin-bottom: 0px; }
-      @media all and (min-width: 43.75em) {
+      @media all and (min-width: 47.875em) {
         ul.prev-next-buttons li:first-child a {
           margin-bottom: 0; } }
   ul.alt {
@@ -795,7 +798,7 @@ blockquote {
   padding-left: 40px;
   border-left: 5px solid #16bef2; }
 
-@media all and (min-width: 43.75em) {
+@media all and (min-width: 47.875em) {
   html {
     font-size: 94%; }
 
@@ -855,13 +858,18 @@ blockquote {
   background-position: left 8px;
   background-repeat: no-repeat;
   display: inline-block;
-  background-size: 17px;
-  padding: 5px 0 5px 35px;
+  background-size: 15px;
+  padding: 5px 0 5px 27px;
   font-family: "jaf-domus-titling-web", sans-serif;
   letter-spacing: 5px;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1;
   color: #606060; }
+  @media all and (min-width: 47.875em) {
+    .site-title {
+      font-size: 17px;
+      background-size: 17px;
+      padding: 5px 0 5px 35px; } }
   .site-title:hover {
     color: white; }
 
@@ -879,11 +887,14 @@ blockquote {
     clear: both; }
   [role="banner"] h1, [role="banner"] h2 {
     text-align: center; }
-    @media all and (min-width: 56.25em) {
+    @media all and (min-width: 47.875em) {
       [role="banner"] h1, [role="banner"] h2 {
         text-align: left; } }
   [role="banner"] h1 {
-    margin: 10px 0 20px; }
+    margin: 10px 0 10px; }
+    @media all and (min-width: 47.875em) {
+      [role="banner"] h1 {
+        margin: 10px 0 20px; } }
   [role="banner"] h2 {
     margin: 0 auto 10px;
     color: #383838;
@@ -893,7 +904,7 @@ blockquote {
       color: #606060; }
       [role="banner"] h2 a:hover {
         color: white; }
-    @media all and (min-width: 56.25em) {
+    @media all and (min-width: 47.875em) {
       [role="banner"] h2 {
         margin: 27px 0 0;
         float: right;

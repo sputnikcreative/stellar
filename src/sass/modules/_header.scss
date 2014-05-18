@@ -4,13 +4,19 @@
   background-position: left 8px;
   background-repeat: no-repeat;
   display: inline-block;
-  background-size: 17px;
-  padding: 5px 0 5px 35px;
+  background-size: 15px;
+  padding: 5px 0 5px 27px;
   font-family: $font-secondary;
   letter-spacing: 5px;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1;
   color: $color-5;
+
+  @media all and (min-width: $mq2/$base+em) {
+    font-size: 17px;
+    background-size: 17px;
+    padding: 5px 0 5px 35px;
+  }
 
   &:hover {
     color: white;
@@ -29,12 +35,16 @@
   h1, h2 {
     text-align: center;
 
-    @media all and (min-width: $mq3/$base+em) {
+    @media all and (min-width: $mq2/$base+em) {
       text-align: left;
     }
   }
   h1 {
-    margin: 10px 0 20px;
+    margin: 10px 0 10px;
+
+    @media all and (min-width: $mq2/$base+em) {
+      margin: 10px 0 20px;
+    }
   }
   h2 {
     margin: 0 auto 10px;
@@ -49,7 +59,7 @@
         color: white;
       }
     }
-    @media all and (min-width: $mq3/$base+em) {
+    @media all and (min-width: $mq2/$base+em) {
       margin: 27px 0 0;
       float: right;
       display: inline-block;

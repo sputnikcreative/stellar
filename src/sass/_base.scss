@@ -24,7 +24,7 @@ $med-column-count: 6;
 $lg-column-count: 12;
 $mqs: 400; // small breakpoint
 $mq1: 525; // Mid range breakpoint
-$mq2: 700; // Med screen breakpoint
+$mq2: 766; // Med screen breakpoint
 $mq3: 900; // Large screen breakpoint
 $mq4: 1105; // xlarge screen breakpoint
 
@@ -506,9 +506,13 @@ table {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 32%;
+  width: 100%;
   position: relative;
   margin-bottom: 80px;
+
+  @media all and (min-width: $mq2/$base+em) {
+    width: 32%;
+  }
 
   @media all and (min-width: $mq4/$base+em) {
     width: 19.7%;
