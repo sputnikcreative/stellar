@@ -39,7 +39,7 @@ body {
   border: 0;
   height: 0;
   border-top: none;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.1);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
   margin-bottom: 20px; }
   @media all and (min-width: 41.875em) {
     .horz-rule {
@@ -70,7 +70,7 @@ a {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
-  color: #16bef2; }
+  color: #aaaaaa; }
   a.alt {
     color: #0d0d0d; }
   a h2, a h3 {
@@ -81,7 +81,7 @@ a {
     transition: all 0.3s ease-in-out;
     color: #0d0d0d; }
   a:hover, a:focus, a:active {
-    color: #0d0d0d; }
+    color: white; }
     a:hover h2, a:hover h3, a:focus h2, a:focus h3, a:active h2, a:active h3 {
       color: rgba(0, 0, 0, 0.8); }
   a.alt2 {
@@ -229,7 +229,12 @@ table {
   display: none; }
 
 .cards {
-  padding: 20px; }
+  padding: 50px 20px 100px;
+  *zoom: 1; }
+  .cards:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .card {
   margin-top: 20px;
@@ -237,7 +242,34 @@ table {
   width: 20%;
   float: left;
   position: relative; }
-  .card:before {
+  .card img, .card h1 {
+    z-index: 2;
+    position: relative;
+    padding-bottom: 10px; }
+  .card h1 {
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: block; }
+  .card span {
+    position: absolute;
+    bottom: -46px;
+    width: 76%;
+    left: 11%;
+    text-align: center;
+    padding: 14px 0 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-bottom: 10px solid rgba(100, 100, 100, 0.15);
+    font-size: 13px;
+    font-size: 0.8125rem; }
+  .card a:before {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     border-top: 2px solid rgba(96, 96, 96, 0.6);
     position: absolute;
     top: 0;
@@ -246,7 +278,11 @@ table {
     height: 100%;
     display: block;
     content: '';
-    background: rgba(100, 100, 100, 0.1); }
+    background: rgba(100, 100, 100, 0.15);
+    z-index: -1; }
+  .card a:hover:before {
+    border-top: 2px solid #aaaaaa;
+    background: rgba(126, 126, 126, 0.15); }
 
 .flex {
   *zoom: 1;
@@ -461,16 +497,16 @@ em {
   text-align: center; }
 
 .alpha {
-  font-size: 24px;
-  font-size: 1.5rem; }
-
-.beta {
-  font-size: 22px;
-  font-size: 1.375rem; }
-
-.gamma {
   font-size: 20px;
   font-size: 1.25rem; }
+
+.beta {
+  font-size: 19px;
+  font-size: 1.1875rem; }
+
+.gamma {
+  font-size: 18px;
+  font-size: 1.125rem; }
 
 .delta {
   font-size: 16px;
@@ -679,16 +715,16 @@ blockquote {
     font-size: 94%; }
 
   .alpha {
-    font-size: 26px;
-    font-size: 1.625rem; }
-
-  .beta {
-    font-size: 23px;
-    font-size: 1.4375rem; }
-
-  .gamma {
     font-size: 21px;
     font-size: 1.3125rem; }
+
+  .beta {
+    font-size: 20px;
+    font-size: 1.25rem; }
+
+  .gamma {
+    font-size: 19px;
+    font-size: 1.1875rem; }
 
   .delta {
     font-size: 17px;
@@ -706,16 +742,16 @@ blockquote {
     font-size: 100%; }
 
   .alpha {
-    font-size: 28px;
-    font-size: 1.75rem; }
-
-  .beta {
-    font-size: 26px;
-    font-size: 1.625rem; }
-
-  .gamma {
     font-size: 22px;
     font-size: 1.375rem; }
+
+  .beta {
+    font-size: 21px;
+    font-size: 1.3125rem; }
+
+  .gamma {
+    font-size: 20px;
+    font-size: 1.25rem; }
 
   .delta {
     font-size: 18px;
