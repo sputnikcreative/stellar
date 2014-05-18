@@ -65,7 +65,10 @@
     whiskey.animate(100, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0);
     return glass.animate(100, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0).after(function() {
       body.setAttribute('class', '');
-      return loading_panel.setAttribute('class', '');
+      loading_panel.setAttribute('class', '');
+      return setTimeout(function() {
+        return loading_panel.setAttribute('class', 'loading-done');
+      }, 1000);
     });
   });
 

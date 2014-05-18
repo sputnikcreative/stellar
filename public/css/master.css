@@ -19,12 +19,13 @@ time, mark, audio, video {
 html {
   background-color: #0d0d0d;
   background-image: url("../img/stars.png");
-  background-size: cover;
+  background-size: 100%;
   background-attachment: fixed; }
 
 body {
   color: #16bef2;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  padding-top: 81px; }
   body.loading {
     overflow: hidden; }
 
@@ -39,8 +40,9 @@ body {
   #loading-panel #glass {
     position: relative;
     padding-bottom: 100%;
-    max-width: 200px;
-    margin: 100px auto 0;
+    max-width: 150px;
+    margin: -75px auto 0;
+    top: 50%;
     overflow: hidden; }
     #loading-panel #glass svg {
       position: absolute !important; }
@@ -58,6 +60,9 @@ body {
     transition: all 0.65s ease-in-out;
     content: '';
     background-color: #0d0d0d;
+    background-image: url("../img/stars.png");
+    background-size: 100%;
+    background-attachment: fixed;
     height: 100%;
     width: 50%;
     top: 0;
@@ -91,6 +96,8 @@ body {
       -ms-transform: translate(0, 0);
       -o-transform: translate(0, 0);
       transform: translate(0, 0); }
+  #loading-panel.loading-done {
+    display: none; }
 
 .text-push {
   text-align: right; }
@@ -856,7 +863,11 @@ blockquote {
 
 [role="banner"] {
   background: rgba(0, 0, 0, 0.8);
-  z-index: 3;
+  z-index: 15;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
   *zoom: 1; }
   [role="banner"]:after {
     content: "";

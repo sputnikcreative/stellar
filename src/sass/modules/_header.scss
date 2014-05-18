@@ -19,7 +19,11 @@
 
 [role="banner"] {
   background: rgba(0,0,0,.8);
-  z-index: 3;
+  z-index: 15;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
   @include clearfix;
 
   h1 {

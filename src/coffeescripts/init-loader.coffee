@@ -55,6 +55,9 @@ glass_mask
     .after( ->
       body.setAttribute('class', '')
       loading_panel.setAttribute('class', '')
+      setTimeout( ->
+        loading_panel.setAttribute('class', 'loading-done')
+      , 1000)
     )
   )
 # mask_transition = glass_mask.attr('transition')
