@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
     include ../partials/head
-    body
+    body.loading
         include ../partials/header
         section.cards
           article.card.card-voyager
@@ -176,5 +176,7 @@ html(lang="en")
                             td 5800000000
                             td 15600000000
                             td 18900000000
+        #loading-panel.show
+          #glass
 
         include ../partials/foot

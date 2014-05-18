@@ -75,14 +75,15 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/js/tween.js', 'src/js/table-svg.js'],
+                src: ['src/js/svgjs-1.0.js', 'src/js/tween.js', 'src/js/init-loader.js', 'src/js/table-svg.js'],
                 dest: 'public/js/master.js'
             }
         },
         coffee: {
             compile: {
                 files: {
-                    'src/js/table-svg.js': 'src/coffeescripts/table-svg.coffee'
+                    'src/js/table-svg.js': 'src/coffeescripts/table-svg.coffee',
+                    'src/js/init-loader.js': 'src/coffeescripts/init-loader.coffee'
                 }
             }
         },
