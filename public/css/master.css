@@ -206,10 +206,22 @@ table {
     left: 0; }
     .svg-container svg text {
       fill: white;
-      font-size: 30px; }
+      font-size: 20px; }
       @media all and (min-width: 41.875em) {
         .svg-container svg text {
-          font-size: 16px; } }
+          font-size: 15px; } }
+  .svg-container#distance-data svg g.ydata text:nth-of-type(3) {
+    -webkit-transform: translate(130px, 515px);
+    -moz-transform: translate(130px, 515px);
+    -ms-transform: translate(130px, 515px);
+    -o-transform: translate(130px, 515px);
+    transform: translate(130px, 515px); }
+  .svg-container#distance-data svg g.ydata text:nth-of-type(4) {
+    -webkit-transform: translate(130px, 530px);
+    -moz-transform: translate(130px, 530px);
+    -ms-transform: translate(130px, 530px);
+    -o-transform: translate(130px, 530px);
+    transform: translate(130px, 530px); }
 
 #all-data {
   display: none; }

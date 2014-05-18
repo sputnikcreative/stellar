@@ -801,32 +801,40 @@ TWEEN.Interpolation = {
   if (supportsSVG) {
     color = '#c4572a';
     color_1 = '#16bef2';
-    initChart = function(selector, color, unit_space) {
-      var addDataNames, addDataUnits, buildBarChart, cell_length, cell_val, convertedData, g_bars, g_xdata, g_ydata, i, j, metric_data, name_data, o_cells, row_length, svg_container, svg_doc, svg_table, viewbox_height, viewbox_width, x_gap, x_padding, x_region, x_units_height, x_width, y_max, y_min, y_padding, y_scale, y_units_width;
-      viewbox_height = 520;
-      viewbox_width = 1040;
-      svg_container = document.getElementById(selector);
-      svg_table = svg_container.getElementsByTagName('table')[0];
-      row_length = svg_table.rows.length;
+    initChart = function(selector, color, unit_space, vb_width, vb_height) {
+      var addDataNames, addDataUnits, addTicks, buildBarChart, g_bars, g_ticks, g_xdata, g_ydata, getTableData, metric_data, name_data, svg_container, svg_doc, svg_table, viewbox_height, viewbox_width, x_gap, x_padding, x_region, x_units_height, x_width, y_max, y_min, y_padding, y_scale, y_units_width;
+      viewbox_height = vb_height;
+      viewbox_width = vb_width;
       name_data = [];
       metric_data = [];
-      i = 0;
-      while (i < row_length) {
-        o_cells = svg_table.rows.item(i).cells;
-        cell_length = o_cells.length;
-        j = 0;
-        while (j < cell_length) {
-          cell_val = o_cells.item(j).innerHTML;
-          if (i === 0) {
-            name_data.push(cell_val);
+      svg_table = '';
+      svg_container = '';
+      getTableData = function(selector) {
+        var cell_length, cell_val, i, j, o_cells, row_length, _results;
+        svg_container = document.getElementById(selector);
+        svg_table = svg_container.getElementsByTagName('table')[0];
+        row_length = svg_table.rows.length;
+        i = 0;
+        _results = [];
+        while (i < row_length) {
+          o_cells = svg_table.rows.item(i).cells;
+          cell_length = o_cells.length;
+          j = 0;
+          while (j < cell_length) {
+            cell_val = o_cells.item(j).childNodes[0].nodeValue;
+            if (i === 0) {
+              name_data.push(cell_val);
+            }
+            if (i === 1) {
+              metric_data.push(parseInt(cell_val));
+            }
+            j++;
           }
-          if (i === 1) {
-            metric_data.push(parseInt(cell_val));
-          }
-          j++;
+          _results.push(i++);
         }
-        i++;
-      }
+        return _results;
+      };
+      getTableData(selector);
       y_max = Math.max.apply(Math, metric_data);
       y_min = Math.min.apply(Math, metric_data);
       y_padding = 20;
@@ -837,11 +845,8 @@ TWEEN.Interpolation = {
       x_width = (viewbox_width - y_units_width) / metric_data.length;
       x_gap = x_width / 1.5;
       x_padding = x_gap / 2;
-      convertedData = metric_data.map(function(x) {
-        return viewbox_height - (x * y_scale);
-      });
       buildBarChart = function(data, i) {
-        var animate, bar, tween, x_axis, x_unit, y_axis, y_unit;
+        var bar, x_axis, x_unit, y_axis, y_unit;
         y_unit = data * y_scale;
         y_axis = viewbox_height - y_unit;
         x_unit = i;
@@ -849,24 +854,9 @@ TWEEN.Interpolation = {
         bar = document.createElementNS('http://www.w3.org/2000/svg', "rect");
         bar.setAttributeNS(null, "width", x_gap);
         bar.setAttributeNS(null, "height", y_unit);
-        bar.setAttribute('transform', 'translate(' + x_axis + ', ' + viewbox_height + ')');
+        bar.setAttribute('transform', 'translate(' + x_axis + ', ' + y_axis + ')');
         bar.setAttributeNS(null, "fill", color);
-        tween = new TWEEN.Tween({
-          top: viewbox_height,
-          left: x_axis
-        }).to({
-          top: y_axis,
-          left: x_axis
-        }, 1000).easing(TWEEN.Easing.Circular.InOut).onUpdate(function() {
-          return bar.setAttribute('transform', 'translate(' + this.left + ', ' + this.top + ')');
-        });
-        tween.start();
-        animate = function() {
-          requestAnimationFrame(animate);
-          return TWEEN.update();
-        };
-        g_bars.appendChild(bar);
-        return animate();
+        return g_bars.appendChild(bar);
       };
       addDataNames = function(data, i) {
         var text, textNode, x_axis, x_unit, y_axis;
@@ -892,11 +882,28 @@ TWEEN.Interpolation = {
         g_ydata.appendChild(text);
         return text.appendChild(textNode);
       };
+      addTicks = function(data, i) {
+        var line, x_axis, y_axis, y_unit;
+        y_unit = data * y_scale;
+        y_axis = viewbox_height - y_unit;
+        x_axis = y_units_width + (x_padding / 2);
+        line = document.createElementNS('http://www.w3.org/2000/svg', "line");
+        line.setAttributeNS(null, "x1", x_axis + 10);
+        line.setAttributeNS(null, "y1", y_axis);
+        line.setAttributeNS(null, "x2", viewbox_width);
+        line.setAttributeNS(null, "y2", y_axis);
+        line.setAttributeNS(null, "stroke-width", 1);
+        line.setAttributeNS(null, "stroke", "#666");
+        return g_ticks.appendChild(line);
+      };
       svg_table.setAttribute("style", "display:none;");
       svg_container.setAttribute('class', 'svg-container');
       svg_doc = document.createElementNS('http://www.w3.org/2000/svg', "svg");
       svg_doc.setAttributeNS(null, "viewBox", '0 0 ' + viewbox_width + ' ' + viewbox_height);
       svg_doc.setAttributeNS(null, "preserveAspectRatio", 'xMidYMin meet');
+      g_ticks = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      g_ticks.setAttribute('class', 'ticks');
+      g_ticks.setAttribute('transform', 'translate(0, ' + (-x_units_height) + ')');
       g_bars = document.createElementNS("http://www.w3.org/2000/svg", "g");
       g_bars.setAttribute('class', 'bar-chart');
       g_bars.setAttribute('transform', 'translate(' + (y_units_width + x_padding) + ' , ' + -(+x_units_height) + ')');
@@ -907,16 +914,18 @@ TWEEN.Interpolation = {
       g_xdata.setAttribute('class', 'xdata');
       g_xdata.setAttribute('transform', 'translate(' + (y_units_width + x_padding) + ',0)');
       svg_container.appendChild(svg_doc);
+      svg_doc.appendChild(g_ticks);
       svg_doc.appendChild(g_bars);
       svg_doc.appendChild(g_ydata);
       svg_doc.appendChild(g_xdata);
       metric_data.forEach(buildBarChart);
       metric_data.forEach(addDataUnits);
+      metric_data.forEach(addTicks);
       return name_data.forEach(addDataNames);
     };
-    initChart('speed-data', color, 20);
-    initChart('mass-data', color, 30);
-    initChart('distance-data', color, 100);
+    initChart('speed-data', color, 20, 1040, 520);
+    initChart('mass-data', color, 30, 1040, 520);
+    initChart('distance-data', color, 100, 1040, 520);
   }
 
 }).call(this);

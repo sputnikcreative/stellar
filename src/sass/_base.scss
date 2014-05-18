@@ -401,11 +401,19 @@ table {
 
     text {
       fill: white;
-      font-size: 30px;
+      font-size: 20px;
 
       @media all and (min-width: $mq3/$base+em) {
-        font-size: 16px;
+        font-size: 15px;
       }
+    }
+  }
+  &#distance-data svg g.ydata text {
+    &:nth-of-type(3) {
+      @include translate(130px, 515px);
+    }
+    &:nth-of-type(4) {
+      @include translate(130px, 530px);
     }
   }
 }
