@@ -38,7 +38,7 @@ $color-5: #696969; // grey
 $color-6: #303030; // dark grey
 $color-7: #777; // grey
 $color-8: #2b2b2a; // very dark grey
-$color-9: #999; // light grey
+$color-9: #aaa; // light grey
 $color-10: #ead052; // faded yellow
 $color-11: #AC9733; // gold text
 $color-12: rgba(100, 100, 100, .1); // light grey
@@ -406,6 +406,9 @@ table {
       @media all and (min-width: $mq3/$base+em) {
         font-size: 15px;
       }
+    }
+    g.ydata text {
+      fill: $color-9;
     }
   }
   &#distance-data svg g.ydata text {

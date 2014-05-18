@@ -210,6 +210,8 @@ table {
       @media all and (min-width: 41.875em) {
         .svg-container svg text {
           font-size: 15px; } }
+    .svg-container svg g.ydata text {
+      fill: #aaaaaa; }
   .svg-container#distance-data svg g.ydata text:nth-of-type(3) {
     -webkit-transform: translate(130px, 515px);
     -moz-transform: translate(130px, 515px);
@@ -498,10 +500,10 @@ h1 {
     margin-top: 10px; }
 
 h2 {
-  color: #0d0d0d;
+  color: #aaaaaa;
   text-transform: uppercase; }
   h2.alt {
-    font-family: "jaf-domus-titling-web", sans-serif;
+    font-family: "allumi-std", serif;
     letter-spacing: 4px; }
 
 h3 {
@@ -665,7 +667,7 @@ pre {
 
 blockquote {
   font-style: italic;
-  color: #999999;
+  color: #aaaaaa;
   font-size: 30px;
   font-size: 1.875rem;
   font-weight: 300;
@@ -887,7 +889,7 @@ input {
   text-transform: uppercase; }
 
 .placeholder {
-  color: #999999; }
+  color: #aaaaaa; }
 
 button.btn {
   -webkit-transition: background 0.3s ease-in-out;
