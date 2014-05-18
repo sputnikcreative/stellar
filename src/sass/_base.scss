@@ -447,7 +447,8 @@ table {
   }
   span {
     position: absolute;
-    bottom: -46px;
+    font-family: $font-primary;
+    bottom: -50px;
     width: 76%;
     left: 11%;
     text-align: center;

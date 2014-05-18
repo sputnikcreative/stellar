@@ -253,7 +253,8 @@ table {
     display: block; }
   .card span {
     position: absolute;
-    bottom: -46px;
+    font-family: "allumi-std", serif;
+    bottom: -50px;
     width: 76%;
     left: 11%;
     text-align: center;
@@ -790,6 +791,12 @@ blockquote {
     clear: both; }
   [role="banner"] h1 {
     margin: 10px 0 20px; }
+  [role="banner"] h2 {
+    margin: 27px 0 0;
+    color: #606060;
+    letter-spacing: 2px; }
+    [role="banner"] h2 a {
+      color: #606060; }
 
 #hero {
   position: relative;
