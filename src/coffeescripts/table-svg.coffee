@@ -88,8 +88,8 @@ if supportsSVG
       line.setAttributeNS(null, "y1",  y_axis)
       line.setAttributeNS(null, "x2",  viewbox_width)
       line.setAttributeNS(null, "y2",  y_axis)
-      line.setAttributeNS(null, "stroke-width",  1)
-      line.setAttributeNS(null, "stroke",  "#666")
+      line.setAttributeNS(null, "stroke-width",  0.75)
+      line.setAttributeNS(null, "stroke",  "#606060")
       g_ticks.appendChild(line)
 
     svg_table.setAttribute "style", "display:none;"

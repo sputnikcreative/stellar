@@ -238,7 +238,7 @@ table {
   float: left;
   position: relative; }
   .card:before {
-    border-top: 2px solid rgba(105, 105, 105, 0.6);
+    border-top: 2px solid rgba(96, 96, 96, 0.6);
     position: absolute;
     top: 0;
     left: 11%;
@@ -740,7 +740,7 @@ blockquote {
   letter-spacing: 5px;
   font-size: 17px;
   line-height: 1;
-  color: dimgrey; }
+  color: #606060; }
   .site-title:hover {
     color: white; }
 
