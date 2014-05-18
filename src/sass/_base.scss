@@ -24,9 +24,9 @@ $med-column-count: 6;
 $lg-column-count: 12;
 $mqs: 400; // small breakpoint
 $mq1: 525; // Mid range breakpoint
-$mq2: 600; // Med screen breakpoint
-$mq3: 670; // Large screen breakpoint
-$mq4: 1024; // xlarge screen breakpoint
+$mq2: 700; // Med screen breakpoint
+$mq3: 900; // Large screen breakpoint
+$mq4: 1105; // xlarge screen breakpoint
 
 
 // color
@@ -211,6 +211,7 @@ body {
 // base links
 a {
   @include transition(all, .3s);
+  -webkit-transform: translateZ(0);
   text-decoration: none;
   color: $color-9;
 
@@ -424,15 +425,23 @@ table {
   display: none;
 }
 .cards {
-  padding: 50px 20px 100px;
+  padding: 50px 20px;
   @include clearfix;
+  display: block;
+  text-align: center;
 }
 .card {
   margin-top: 20px;
-  display: block;
-  width: 20%;
-  float: left;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 32%;
   position: relative;
+  margin-bottom: 80px;
+
+  @media all and (min-width: $mq4/$base+em) {
+    width: 19.7%;
+  }
 
   img, h1 {
     z-index: 2;

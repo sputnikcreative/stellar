@@ -41,13 +41,13 @@ body {
   border-top: none;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
   margin-bottom: 20px; }
-  @media all and (min-width: 41.875em) {
+  @media all and (min-width: 56.25em) {
     .horz-rule {
       margin-bottom: 80px; } }
   .horz-rule.alt {
     margin-top: 20px;
     margin-bottom: 20px; }
-    @media all and (min-width: 41.875em) {
+    @media all and (min-width: 56.25em) {
       .horz-rule.alt {
         margin-top: 60px;
         margin-bottom: 60px; } }
@@ -69,6 +69,7 @@ a {
   -o-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  -webkit-transform: translateZ(0);
   text-decoration: none;
   color: #aaaaaa; }
   a.alt {
@@ -158,7 +159,7 @@ video {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   display: none; }
-  @media all and (min-width: 41.875em) {
+  @media all and (min-width: 56.25em) {
     .video-img-wrap {
       display: block; } }
   .video-img-wrap video {
@@ -207,7 +208,7 @@ table {
     .svg-container svg text {
       fill: white;
       font-size: 20px; }
-      @media all and (min-width: 41.875em) {
+      @media all and (min-width: 56.25em) {
         .svg-container svg text {
           font-size: 15px; } }
     .svg-container svg g.ydata text {
@@ -229,8 +230,10 @@ table {
   display: none; }
 
 .cards {
-  padding: 50px 20px 100px;
-  *zoom: 1; }
+  padding: 50px 20px;
+  *zoom: 1;
+  display: block;
+  text-align: center; }
   .cards:after {
     content: "";
     display: table;
@@ -238,10 +241,15 @@ table {
 
 .card {
   margin-top: 20px;
-  display: block;
-  width: 20%;
-  float: left;
-  position: relative; }
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 32%;
+  position: relative;
+  margin-bottom: 80px; }
+  @media all and (min-width: 69.0625em) {
+    .card {
+      width: 19.7%; } }
   .card img, .card h1 {
     z-index: 2;
     position: relative;
@@ -331,7 +339,7 @@ table {
     display: block; }
   .flex .flex-nested:first-child, .flex .flex-nested.g1-flex4:last-child {
     padding-left: 0; }
-  @media all and (min-width: 37.5em) {
+  @media all and (min-width: 43.75em) {
     .flex .g2-flex1 {
       float: left;
       width: 16.66667%;
@@ -384,7 +392,7 @@ table {
       padding-left: 0.625rem; }
     .flex .flex-nested.g1-flex4:first-child {
       padding-left: 0; } }
-  @media all and (min-width: 41.875em) {
+  @media all and (min-width: 56.25em) {
     .flex .g3-flex1 {
       float: left;
       width: 8.33333%;
@@ -601,13 +609,13 @@ ul {
     ul.horz-buttons li, ul.prev-next-buttons li {
       display: inline;
       text-align: center; }
-      @media all and (min-width: 41.875em) {
+      @media all and (min-width: 56.25em) {
         ul.horz-buttons li, ul.prev-next-buttons li {
           margin: 0 25px;
           overflow: visible; } }
       ul.horz-buttons li:first-child a, ul.prev-next-buttons li:first-child a {
         margin-bottom: 10px; }
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 43.75em) {
           ul.horz-buttons li:first-child a, ul.prev-next-buttons li:first-child a {
             margin-bottom: 0; } }
   ul.prev-next-buttons {
@@ -615,7 +623,7 @@ ul {
     padding-bottom: 40px; }
     ul.prev-next-buttons li a.btn {
       padding: 17px 12px 14px 15px; }
-    @media all and (min-width: 41.875em) {
+    @media all and (min-width: 56.25em) {
       ul.prev-next-buttons li {
         margin: 0 10px;
         overflow: visible; }
@@ -623,7 +631,7 @@ ul {
           padding: 17px 30px 14px 32px; } }
     ul.prev-next-buttons li:first-child a {
       margin-bottom: 0px; }
-      @media all and (min-width: 37.5em) {
+      @media all and (min-width: 43.75em) {
         ul.prev-next-buttons li:first-child a {
           margin-bottom: 0; } }
   ul.alt {
@@ -711,7 +719,7 @@ blockquote {
   padding-left: 40px;
   border-left: 5px solid #16bef2; }
 
-@media all and (min-width: 37.5em) {
+@media all and (min-width: 43.75em) {
   html {
     font-size: 94%; }
 
@@ -738,7 +746,7 @@ blockquote {
   .zeta {
     font-size: 13px;
     font-size: 0.8125rem; } }
-@media all and (min-width: 41.875em) {
+@media all and (min-width: 56.25em) {
   html {
     font-size: 100%; }
 
@@ -793,10 +801,12 @@ blockquote {
     margin: 10px 0 20px; }
   [role="banner"] h2 {
     margin: 27px 0 0;
-    color: #606060;
+    color: #383838;
     letter-spacing: 2px; }
     [role="banner"] h2 a {
       color: #606060; }
+      [role="banner"] h2 a:hover {
+        color: white; }
 
 #hero {
   position: relative;
@@ -813,7 +823,7 @@ blockquote {
     @media all and (min-width: 32.8125em) {
       #hero #hero-svg {
         max-height: 405px; } }
-    @media all and (min-width: 64em) {
+    @media all and (min-width: 69.0625em) {
       #hero #hero-svg {
         max-height: 405px; } }
   #hero .tagline {
