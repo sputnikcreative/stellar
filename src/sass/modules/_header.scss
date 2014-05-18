@@ -1,7 +1,7 @@
 .site-title {
   position: relative;
   background-image: url($asset_path+'stellar-logo.svg');
-  background-position: left 8px;
+  background-position: left 7px;
   background-repeat: no-repeat;
   display: inline-block;
   background-size: 15px;
@@ -13,6 +13,7 @@
   color: $color-5;
 
   @media all and (min-width: $mq2/$base+em) {
+    background-position: left 8px;
     font-size: 17px;
     background-size: 17px;
     padding: 5px 0 5px 35px;

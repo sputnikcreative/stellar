@@ -855,7 +855,7 @@ blockquote {
 .site-title {
   position: relative;
   background-image: url("../img/stellar-logo.svg");
-  background-position: left 8px;
+  background-position: left 7px;
   background-repeat: no-repeat;
   display: inline-block;
   background-size: 15px;
@@ -867,6 +867,7 @@ blockquote {
   color: #606060; }
   @media all and (min-width: 47.875em) {
     .site-title {
+      background-position: left 8px;
       font-size: 17px;
       background-size: 17px;
       padding: 5px 0 5px 35px; } }
