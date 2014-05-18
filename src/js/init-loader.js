@@ -35,7 +35,7 @@
 
   draw = SVG("glass").viewbox(0, 0, 400, 400).attr('preserveAspectRatio', 'xMidYMin meet');
 
-  whiskey = draw.path(shape_2).fill(whiskey_color);
+  whiskey = draw.path(shape_2).fill(whiskey_color).opacity(0);
 
   glass_outside = draw.path(shape_1).fill('none').stroke({
     'color': 'white',
@@ -62,8 +62,8 @@
   whiskey.clipWith(glass_mask);
 
   glass_mask.animate(3000, circOut, 1000).translate(0, 100).after(function() {
-    whiskey.animate(100, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0);
-    return glass.animate(100, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0).after(function() {
+    whiskey.animate(300, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0);
+    return glass.animate(400, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0).after(function() {
       body.setAttribute('class', '');
       loading_panel.setAttribute('class', '');
       return setTimeout(function() {
@@ -72,10 +72,12 @@
     });
   });
 
-  glass = draw.set().add(glass_outside).add(glass_2).add(glass_3).add(glass_4).translate(100, 0).scale(.5, .5);
+  glass = draw.set().add(glass_outside).add(glass_2).add(glass_3).add(glass_4).translate(100, 0).scale(.5, .5).opacity(0);
 
-  glass.animate(400, backOut, 100).during(function(pos, morph) {
-    return this.scale(morph(.5, 1), morph(.5, 1)).translate(morph(100, 0), morph(0, 0));
+  glass.animate(700, circOut, 500).opacity(1).during(function(pos, morph) {
+    return this.scale(morph(.9, 1), morph(.9, 1)).translate(morph(15, 0), morph(0, 0));
+  }).after(function() {
+    return whiskey.opacity(1);
   });
 
 }).call(this);

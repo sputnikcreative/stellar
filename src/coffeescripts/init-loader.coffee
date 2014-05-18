@@ -30,6 +30,7 @@ draw = SVG("glass").viewbox(0, 0, 400, 400).attr('preserveAspectRatio', 'xMidYMi
 
 whiskey = draw.path(shape_2)
   .fill(whiskey_color)
+  .opacity(0)
 glass_outside = draw.path(shape_1)
   .fill('none')
   .stroke('color':'white', 'width': 7)
@@ -50,8 +51,8 @@ whiskey.clipWith(glass_mask)
 glass_mask
   .animate(3000, circOut, 1000).translate(0, 100)
   .after( ->
-    whiskey.animate(100, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
-    glass.animate(100, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
+    whiskey.animate(300, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
+    glass.animate(400, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
     .after( ->
       body.setAttribute('class', '')
       loading_panel.setAttribute('class', '')
@@ -75,6 +76,10 @@ glass = draw.set()
   .add(glass_4)
   .translate(100, 0)
   .scale(.5, .5)
+  .opacity(0)
 
-glass.animate(400, backOut, 100).during (pos, morph) ->
-  @.scale(morph(.5, 1), morph(.5, 1)).translate(morph(100, 0), morph(0, 0))
+glass.animate(700, circOut, 500).opacity(1).during (pos, morph) ->
+  @.scale(morph(.9, 1), morph(.9, 1)).translate(morph(15, 0), morph(0, 0))
+.after( ->
+  whiskey.opacity(1)
+)
