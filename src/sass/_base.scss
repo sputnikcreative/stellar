@@ -273,7 +273,6 @@ body {
 // base links
 a {
   @include transition(all, .3s);
-  -webkit-transform: translateZ(0);
   text-decoration: none;
   color: $color-9;
 

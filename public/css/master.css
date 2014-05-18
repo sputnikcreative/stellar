@@ -135,7 +135,6 @@ a {
   -o-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-transform: translateZ(0);
   text-decoration: none;
   color: #aaaaaa; }
   a.alt {
