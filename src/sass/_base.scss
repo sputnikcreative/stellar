@@ -143,7 +143,7 @@ $sprite-size: 481px 99px;
 html {
   background-color: $color-1;
   background-image: url($asset_path+'stars.png');
-  background-size: 100%;
+  background-size: 2000px;
   background-attachment: fixed;
 }
 body {
@@ -540,6 +540,7 @@ table {
     @include font-size(13);
   }
   a {
+    -webkit-transform: translate3d(0,0,0);
 
     &:before {
       @include transition(all, .3s);

@@ -19,7 +19,7 @@ time, mark, audio, video {
 html {
   background-color: #0d0d0d;
   background-image: url("../img/stars.png");
-  background-size: 100%;
+  background-size: 2000px;
   background-attachment: fixed; }
 
 body {
@@ -347,22 +347,24 @@ table {
     border-bottom: 10px solid rgba(100, 100, 100, 0.15);
     font-size: 13px;
     font-size: 0.8125rem; }
-  .card a:before {
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    border-top: 2px solid rgba(96, 96, 96, 0.6);
-    position: absolute;
-    top: 0;
-    left: 11%;
-    width: 76%;
-    height: 100%;
-    display: block;
-    content: '';
-    background: rgba(100, 100, 100, 0.15);
-    z-index: -1; }
+  .card a {
+    -webkit-transform: translate3d(0, 0, 0); }
+    .card a:before {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      border-top: 2px solid rgba(96, 96, 96, 0.6);
+      position: absolute;
+      top: 0;
+      left: 11%;
+      width: 76%;
+      height: 100%;
+      display: block;
+      content: '';
+      background: rgba(100, 100, 100, 0.15);
+      z-index: -1; }
   .card a:hover:before {
     border-top: 2px solid #aaaaaa;
     background: rgba(126, 126, 126, 0.15); }
