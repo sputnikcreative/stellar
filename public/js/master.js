@@ -4409,7 +4409,7 @@ TWEEN.Interpolation = {
         };
 }());
 ;(function() {
-  var backOut, body, circOut, draw, elastic, glass, glass_2, glass_3, glass_4, glass_mask, glass_outside, loading_panel, shape_1, shape_2, shape_3, shape_4, whiskey, whiskey_color;
+  var backOut, body, circOut, draw, elastic, glass, glass_2, glass_3, glass_4, glass_mask, glass_outside, light_grey, loading_panel, shape_1, shape_2, shape_3, shape_4, whiskey, whiskey_color;
 
   backOut = function(pos) {
     var s;
@@ -4428,6 +4428,8 @@ TWEEN.Interpolation = {
     }
     return Math.pow(2, -10 * pos) * Math.sin((pos - 0.075) * (2 * Math.PI) / .3) + 1;
   };
+
+  light_grey = '#ccc';
 
   shape_1 = 'M81.155,367.61 c85.62,20.005,151.713,20.152,236.266,0.014c4.247-1.011,7.445-4.89,7.916-9.665l38.384-287.664 c0.648-6.57-4.006-12.308-9.984-12.308H47.579c-5.951,0-10.597,5.689-9.991,12.234l35.608,287.642 C73.641,362.683,76.867,366.608,81.155,367.61z';
 
@@ -4448,22 +4450,22 @@ TWEEN.Interpolation = {
   whiskey = draw.path(shape_2).fill(whiskey_color).opacity(0);
 
   glass_outside = draw.path(shape_1).fill('none').stroke({
-    'color': 'white',
+    'color': light_grey,
     'width': 7
   });
 
   glass_2 = draw.path(shape_2).fill('none').stroke({
-    'color': 'white',
+    'color': light_grey,
     'width': 2
   });
 
   glass_3 = draw.path(shape_3).fill('none').stroke({
-    'color': 'white',
+    'color': light_grey,
     'width': 2
   });
 
   glass_4 = draw.path(shape_4).fill('none').stroke({
-    'color': 'white',
+    'color': light_grey,
     'width': 2
   });
 

@@ -12,7 +12,8 @@ circOut = (pos) ->
 elastic = (pos) ->
   if pos == !!pos then return pos
   return Math.pow(2, -10 * pos) * Math.sin((pos - 0.075) * (2 * Math.PI) / .3) + 1
-
+#color
+light_grey = '#ddd'
 #shapes
 shape_1 = 'M81.155,367.61 c85.62,20.005,151.713,20.152,236.266,0.014c4.247-1.011,7.445-4.89,7.916-9.665l38.384-287.664 c0.648-6.57-4.006-12.308-9.984-12.308H47.579c-5.951,0-10.597,5.689-9.991,12.234l35.608,287.642
 C73.641,362.683,76.867,366.608,81.155,367.61z'
@@ -33,16 +34,16 @@ whiskey = draw.path(shape_2)
   .opacity(0)
 glass_outside = draw.path(shape_1)
   .fill('none')
-  .stroke('color':'white', 'width': 7)
+  .stroke('color':light_grey, 'width': 7)
 glass_2 = draw.path(shape_2)
   .fill('none')
-  .stroke('color':'white', 'width': 2)
+  .stroke('color':light_grey, 'width': 2)
 glass_3 = draw.path(shape_3)
   .fill('none')
-  .stroke('color':'white', 'width': 2)
+  .stroke('color':light_grey, 'width': 2)
 glass_4 = draw.path(shape_4)
   .fill('none')
-  .stroke('color':'white', 'width': 2)
+  .stroke('color':light_grey, 'width': 2)
 glass_mask = draw.rect(400, 300)
   .fill('none')
   .translate(0, 300)
