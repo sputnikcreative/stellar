@@ -24,7 +24,7 @@ if supportsSVG
         cell_length = o_cells.length
         j = 0
         while j < cell_length
-          cell_val = o_cells.item(j).childNodes[0].nodeValue
+          cell_val = o_cells.item(j).childNodes[0].textContent
           if i is 0 then name_data.push(cell_val)
           if i is 1 then metric_data.push(parseInt(cell_val))
           j++
@@ -125,7 +125,7 @@ if supportsSVG
     metric_data.forEach(addDataUnits)
     metric_data.forEach(addTicks)
     name_data.forEach(addDataNames)
-
+# make 3d flip table and chart
   initChart('speed-data', color, 20, 1040, 520)
   initChart('mass-data', color, 30, 1040, 520)
   initChart('distance-data', color, 100, 1040, 520)

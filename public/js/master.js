@@ -4523,7 +4523,7 @@ TWEEN.Interpolation = {
           cell_length = o_cells.length;
           j = 0;
           while (j < cell_length) {
-            cell_val = o_cells.item(j).childNodes[0].nodeValue;
+            cell_val = o_cells.item(j).childNodes[0].textContent;
             if (i === 0) {
               name_data.push(cell_val);
             }
