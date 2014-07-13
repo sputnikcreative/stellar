@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    include ../partials/head
+    body
+        include ../partials/header
+        section
+            .flex
+              .g1-flex4.g2-flex8.g3-flex12
+                h1.alpha.center.alt Cassini
+              .g1-flex4.g2-flex8.g3-flex6
+                img.cassini.display(src="/public/img/cassini.png")
+              .g1-flex4.g2-flex8.g3-flex6#speed
+                h1.alpha.center Max Speed
+                h2.epsilon.alt.center Kilometers per hour
+                #speed-data
+                  table#speed-data-table
+                      tr
+                          th Voyager 1
+                          th New Horizons
+                          th Dawn
+                          th Odyssey
+                          th Cassini
+                      tr
+                          td 61500
+                          td 58536
+                          td 41256
+                          td 21266
+                          td 66240
+
+        include ../partials/cards
+
+        include ../partials/foot

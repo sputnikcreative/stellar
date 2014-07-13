@@ -39,6 +39,10 @@ h1 {
   .stack {
     margin-top: 10px;
   }
+  &.alt {
+    @include font-size(50);
+    color: rgba(white, .7);
+  }
 }
 h2 {
   color: $color-9;

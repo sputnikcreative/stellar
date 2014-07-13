@@ -57,7 +57,12 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    "index.html": "src/views/front.jade"
+                    "index.html": "src/views/front.jade",
+                    "voyager/index.html": "src/views/voyager.jade",
+                    "cassini/index.html": "src/views/cassini.jade",
+                    "newhorizons/index.html": "src/views/newhorizons.jade",
+                    "dawn/index.html": "src/views/dawn.jade",
+                    "odyssey/index.html": "src/views/odyssey.jade"
                 }
             }
         },

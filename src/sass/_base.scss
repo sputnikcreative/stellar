@@ -573,5 +573,21 @@ table {
     }
   }
 }
+img.display {
+  @include transition(all, .5s);
+  margin-top: 30px;
+  @include scale(.9, .9);
+  opacity: 0;
+
+  &.dawn {
+    margin-top: 80px;
+  }
+}
+body.page-loaded {
+  img.display {
+    @include scale(1, 1);
+    opacity: 1;
+  }
+}
 
 // --- end base styles -------------------------------

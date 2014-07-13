@@ -12,7 +12,7 @@
     <script type="text/javascript" src="//use.typekit.net/dxc5gpv.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
-  <body class="loading">
+  <body>
     <div class="menu-button"></div>
     <header role="banner">
       <div class="flex">
@@ -42,21 +42,13 @@
         </nav>
       </div>
     </header>
-    <section class="cards">
-      <article class="card card-voyager"><a href="/voyager">
-          <h1 class="zeta center">Voyager 1</h1><img src="/public/img/voyager.png" class="voyager"><span>launch</span></a></article>
-      <article class="card card-horizons"><a href="/newhorizons">
-          <h1 class="zeta center">New Horizons</h1><img src="/public/img/new-horizons.png" class="new-horizons"><span>launch</span></a></article>
-      <article class="card card-dawn"><a href="/dawn">
-          <h1 class="zeta center">Dawn</h1><img src="/public/img/dawn.png" class="dawn"><span>launch</span></a></article>
-      <article class="card card-odyssey"><a href="/odyssey">
-          <h1 class="zeta center">Odyssey</h1><img src="/public/img/odyssey.png" class="odyssey"><span>launch</span></a></article>
-      <article class="card card-cassini"><a href="/cassini">
-          <h1 class="zeta center">Cassini</h1><img src="/public/img/cassini.png" class="cassini"><span>launch</span></a></article>
-    </section>
-    <section id="speed">
+    <section>
       <div class="flex">
         <div class="g1-flex4 g2-flex8 g3-flex12">
+          <h1 class="alpha center alt">Voyager</h1>
+        </div>
+        <div class="g1-flex4 g2-flex8 g3-flex6 push"><img src="/public/img/voyager.png" class="voyager display"></div>
+        <div id="speed" class="g1-flex4 g2-flex8 g3-flex6">
           <h1 class="alpha center">Max Speed</h1>
           <h2 class="epsilon alt center">Kilometers per hour</h2>
           <div id="speed-data">
@@ -80,61 +72,18 @@
         </div>
       </div>
     </section>
-    <section id="mass">
-      <div class="flex">
-        <div class="g1-flex4 g2-flex8 g3-flex12">
-          <h1 class="alpha center">Mass</h1>
-          <h2 class="epsilon alt center">Kilograms</h2>
-          <div id="mass-data">
-            <table id="mass-data-table">
-              <tr>
-                <th>Voyager 1</th>
-                <th>New Horizons</th>
-                <th>Dawn</th>
-                <th>Odyssey</th>
-                <th>Cassini</th>
-              </tr>
-              <tr>
-                <td>733</td>
-                <td>478</td>
-                <td>1240</td>
-                <td>376</td>
-                <td>2523</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
+    <section class="cards">
+      <article class="card card-voyager"><a href="/voyager">
+          <h1 class="zeta center">Voyager 1</h1><img src="/public/img/voyager.png" class="voyager"><span>launch</span></a></article>
+      <article class="card card-horizons"><a href="/newhorizons">
+          <h1 class="zeta center">New Horizons</h1><img src="/public/img/new-horizons.png" class="new-horizons"><span>launch</span></a></article>
+      <article class="card card-dawn"><a href="/dawn">
+          <h1 class="zeta center">Dawn</h1><img src="/public/img/dawn.png" class="dawn"><span>launch</span></a></article>
+      <article class="card card-odyssey"><a href="/odyssey">
+          <h1 class="zeta center">Odyssey</h1><img src="/public/img/odyssey.png" class="odyssey"><span>launch</span></a></article>
+      <article class="card card-cassini"><a href="/cassini">
+          <h1 class="zeta center">Cassini</h1><img src="/public/img/cassini.png" class="cassini"><span>launch</span></a></article>
     </section>
-    <section id="distance">
-      <div class="flex">
-        <div class="g1-flex4 g2-flex8 g3-flex12">
-          <h1 class="alpha center">Distance from earth</h1>
-          <h2 class="epsilon alt center">Kilometers</h2>
-          <div id="distance-data">
-            <table id="distance-data-table">
-              <tr>
-                <th>Voyager 1</th>
-                <th>New Horizons</th>
-                <th>Dawn</th>
-                <th>Odyssey</th>
-                <th>Cassini</th>
-              </tr>
-              <tr>
-                <td>18900000000</td>
-                <td>5800000000</td>
-                <td>236300000</td>
-                <td>54600000</td>
-                <td>1500000000</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div id="loading-panel" class="show">
-      <div id="glass"></div>
-    </div>
     <!--main script-->
     <script type="text/javascript" src="../public/js/master.js"></script>
   </body>

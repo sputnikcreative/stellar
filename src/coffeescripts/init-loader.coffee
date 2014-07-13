@@ -1,4 +1,4 @@
-# Clipping with svg.js
+# loading with svg.js
 
 # easing
 backOut = (pos) ->
@@ -26,61 +26,66 @@ whiskey_color = '#ad5321'
 
 body = document.getElementsByTagName('body')[0]
 loading_panel = document.getElementById('loading-panel')
-#build
-draw = SVG("glass").viewbox(0, 0, 400, 400).attr('preserveAspectRatio', 'xMidYMin meet')
+if loading_panel
+  #build
+  draw = SVG("glass").viewbox(0, 0, 400, 400).attr('preserveAspectRatio', 'xMidYMin meet')
 
-whiskey = draw.path(shape_2)
-  .fill(whiskey_color)
-  .opacity(0)
-glass_outside = draw.path(shape_1)
-  .fill('none')
-  .stroke('color':light_grey, 'width': 7)
-glass_2 = draw.path(shape_2)
-  .fill('none')
-  .stroke('color':light_grey, 'width': 2)
-glass_3 = draw.path(shape_3)
-  .fill('none')
-  .stroke('color':light_grey, 'width': 2)
-glass_4 = draw.path(shape_4)
-  .fill('none')
-  .stroke('color':light_grey, 'width': 2)
-glass_mask = draw.rect(400, 300)
-  .fill('none')
-  .translate(0, 300)
-whiskey.clipWith(glass_mask)
+  whiskey = draw.path(shape_2)
+    .fill(whiskey_color)
+    .opacity(0)
+  glass_outside = draw.path(shape_1)
+    .fill('none')
+    .stroke('color':light_grey, 'width': 7)
+  glass_2 = draw.path(shape_2)
+    .fill('none')
+    .stroke('color':light_grey, 'width': 2)
+  glass_3 = draw.path(shape_3)
+    .fill('none')
+    .stroke('color':light_grey, 'width': 2)
+  glass_4 = draw.path(shape_4)
+    .fill('none')
+    .stroke('color':light_grey, 'width': 2)
+  glass_mask = draw.rect(400, 300)
+    .fill('none')
+    .translate(0, 300)
+  whiskey.clipWith(glass_mask)
 
-glass_mask
-  .animate(3000, circOut, 1000).translate(0, 100)
-  .after( ->
-    whiskey.animate(300, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
-    glass.animate(400, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
+  glass_mask
+    .animate(3000, circOut, 1000).translate(0, 100)
     .after( ->
-      body.setAttribute('class', '')
-      loading_panel.setAttribute('class', '')
-      setTimeout( ->
-        loading_panel.setAttribute('class', 'loading-done')
-      , 1000)
+      whiskey.animate(300, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
+      glass.animate(400, circOut, 0).scale(1.1, 1.1).translate(-15, -15).opacity(0)
+      .after( ->
+        body.setAttribute('class', '')
+        loading_panel.setAttribute('class', '')
+        setTimeout( ->
+          loading_panel.setAttribute('class', 'loading-done')
+        , 1000)
+      )
     )
+  # mask_transition = glass_mask.attr('transition')
+  # percentage = Math.round(mask_transition)
+  # number = new SVG.Number('0%')
+  # percentage = number.toString()
+  # counter = draw.text(percentage)
+  #   .center(200, 200)
+  #   .fill("#1d1d1d")
+
+  glass = draw.set()
+    .add(glass_outside)
+    .add(glass_2)
+    .add(glass_3)
+    .add(glass_4)
+    .translate(100, 0)
+    .scale(.5, .5)
+    .opacity(0)
+
+  glass.animate(700, circOut, 500).opacity(1).during (pos, morph) ->
+    @.scale(morph(.9, 1), morph(.9, 1)).translate(morph(15, 0), morph(0, 0))
+  .after( ->
+    whiskey.opacity(1)
   )
-# mask_transition = glass_mask.attr('transition')
-# percentage = Math.round(mask_transition)
-# number = new SVG.Number('0%')
-# percentage = number.toString()
-# counter = draw.text(percentage)
-#   .center(200, 200)
-#   .fill("#1d1d1d")
-
-glass = draw.set()
-  .add(glass_outside)
-  .add(glass_2)
-  .add(glass_3)
-  .add(glass_4)
-  .translate(100, 0)
-  .scale(.5, .5)
-  .opacity(0)
-
-glass.animate(700, circOut, 500).opacity(1).during (pos, morph) ->
-  @.scale(morph(.9, 1), morph(.9, 1)).translate(morph(15, 0), morph(0, 0))
-.after( ->
-  whiskey.opacity(1)
-)
+else
+  setTimeout( ->
+    body.setAttribute('class', 'page-loaded')
+  , 300)
