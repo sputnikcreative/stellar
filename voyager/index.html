@@ -44,30 +44,20 @@
     </header>
     <section>
       <div class="flex">
-        <div class="g1-flex4 g2-flex8 g3-flex12">
-          <h1 class="alpha center alt">Voyager</h1>
+        <div class="g1-flex4 g2-flex6 g3-flex12">
+          <h1 class="alpha center alt">Voyager 1</h1>
         </div>
-        <div class="g1-flex4 g2-flex8 g3-flex6 push"><img src="/public/img/voyager.png" class="voyager display"></div>
-        <div id="speed" class="g1-flex4 g2-flex8 g3-flex6">
-          <h1 class="alpha center">Max Speed</h1>
-          <h2 class="epsilon alt center">Kilometers per hour</h2>
-          <div id="speed-data">
-            <table id="speed-data-table">
-              <tr>
-                <th>Voyager 1</th>
-                <th>New Horizons</th>
-                <th>Dawn</th>
-                <th>Odyssey</th>
-                <th>Cassini</th>
-              </tr>
-              <tr>
-                <td>61500</td>
-                <td>58536</td>
-                <td>41256</td>
-                <td>21266</td>
-                <td>66240</td>
-              </tr>
-            </table>
+        <div class="g1-flex4 g2-flex6 g3-flex6 push"><img src="/public/img/voyager.png" class="voyager display"></div>
+        <div class="g1-flex4 g2-flex6 g3-flex6">
+          <div class="g1-flex4 g2-flex3 g3-flex6 flex-nested">
+            <h2 class="gamma">Distance from Earth</h2>
+            <p id="voy1_km" class="fade-text large"></p>
+            <p id="voy1_au" class="fade-text large"></p>
+          </div>
+          <div class="g1-flex4 g2-flex3 g3-flex6 flex-nested">
+            <h2 class="gamma">Distance from the Sun</h2>
+            <p id="voy1_kms" class="fade-text large"></p>
+            <p id="voy1_aus" class="fade-text large"></p>
           </div>
         </div>
       </div>

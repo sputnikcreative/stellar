@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/js/svgjs-1.0.js', 'src/js/tween.js', 'src/js/init-loader.js', 'src/js/table-svg.js'],
+                src: ['src/js/svgjs-1.0.js', 'src/js/distance.js', 'src/js/init-loader.js', 'src/js/table-svg.js'],
                 dest: 'public/js/master.js'
             }
         },

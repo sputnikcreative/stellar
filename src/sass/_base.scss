@@ -583,8 +583,14 @@ img.display {
     margin-top: 80px;
   }
 }
+.fade-text {
+  @include transition(all, .5s);
+  @include scale(.9, .9);
+  opacity: 0;
+}
 body.page-loaded {
-  img.display {
+  img.display,
+  .fade-text {
     @include scale(1, 1);
     opacity: 1;
   }

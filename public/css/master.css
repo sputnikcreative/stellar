@@ -388,7 +388,21 @@ img.display {
   img.display.dawn {
     margin-top: 80px; }
 
-body.page-loaded img.display {
+.fade-text {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: scale(0.9, 0.9);
+  -moz-transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9);
+  -o-transform: scale(0.9, 0.9);
+  transform: scale(0.9, 0.9);
+  opacity: 0; }
+
+body.page-loaded img.display,
+body.page-loaded .fade-text {
   -webkit-transform: scale(1, 1);
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
@@ -652,11 +666,16 @@ h1 {
     color: rgba(255, 255, 255, 0.7); }
 
 h2 {
-  color: #aaaaaa;
-  text-transform: uppercase; }
+  margin-top: 30px;
+  color: #c4572a;
+  margin-bottom: 10px; }
   h2.alt {
     font-family: "allumi-std", serif;
-    letter-spacing: 4px; }
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #aaaaaa;
+    margin-top: 0px;
+    margin-bottom: 20px; }
 
 h3 {
   font-family: "jaf-domus-titling-web", sans-serif;
@@ -673,7 +692,8 @@ h4 {
 
 p, ul, pre {
   font-size: 18px;
-  font-size: 1.125rem; }
+  font-size: 1.125rem;
+  margin-bottom: 5px; }
   p.small, ul.small, pre.small {
     font-size: 12px;
     font-size: 0.75rem; }
@@ -682,8 +702,8 @@ p, ul, pre {
     p.small.push, ul.small.push, pre.small.push {
       float: right; }
   p.large, ul.large, pre.large {
-    font-size: 18px;
-    font-size: 1.125rem; }
+    font-size: 20px;
+    font-size: 1.25rem; }
 
 ul {
   list-style-type: none; }
@@ -928,7 +948,8 @@ blockquote {
     margin: 0 auto 10px;
     color: #383838;
     letter-spacing: 2px;
-    display: block; }
+    display: block;
+    text-transform: uppercase; }
     [role="banner"] h2 a {
       color: #606060; }
       [role="banner"] h2 a:hover {

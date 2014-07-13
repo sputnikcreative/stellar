@@ -125,7 +125,7 @@ if supportsSVG
     metric_data.forEach(addDataUnits)
     metric_data.forEach(addTicks)
     name_data.forEach(addDataNames)
-# make 3d flip table and chart
+
   initChart('speed-data', color, 20, 1040, 520)
   initChart('mass-data', color, 30, 1040, 520)
   initChart('distance-data', color, 100, 1040, 520)
